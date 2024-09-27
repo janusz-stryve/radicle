@@ -1,0 +1,23 @@
+# Documentation: https://roots.io/trellis/docs/local-development/
+# `wordpress_sites` options: https://roots.io/trellis/docs/wordpress-sites/
+# Define accompanying passwords/secrets in group_vars/development/vault.yml
+
+wordpress_sites:
+  radicle.yumistudio.pl:
+    site_hosts:
+      - canonical: radicle.yumistudio.test
+        redirects:
+          - www.radicle.yumistudio.test
+    local_path: ..
+    public_path: public
+    upload_path: content/uploads
+    admin_email: admin@radicle.yumistudio.test
+    multisite:
+      enabled: false
+    ssl:
+      enabled: false
+      provider: self-signed
+    cache:
+      enabled: false
+    xmlrpc:
+      enabled: false
