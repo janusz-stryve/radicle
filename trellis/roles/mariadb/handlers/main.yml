@@ -1,6 +1,7 @@
 ---
 - name: restart mysql server
   service:
-    name: mysql
+    name: mariadb
     state: restarted
     enabled: true
+    use: service

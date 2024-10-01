@@ -45,7 +45,14 @@
       src: 50-server.cnf.j2
       dest: /etc/mysql/mariadb.conf.d/50-server.cnf
       mode: '0644'
-    notify: restart mysql server
+    # notify: restart mysql server
+  
+  - name: Restart mariadb server
+    service:
+      name: mariadb
+      state: restarted
+      enabled: true
+      use: service
 
   - name: Set root user password
     mysql_user:
@@ -54,7 +61,7 @@
       password: "{{ mysql_root_password }}"
       check_implicit_admin: yes
       state: present
-    no_log: true
+    no_log: false
     loop:
       - "{{ inventory_hostname }}"
       - 127.0.0.1
@@ -66,7 +73,7 @@
       user: ""
       host: "{{ item }}"
       state: absent
-    no_log: true
+    no_log: false
     loop:
       - localhost
       - "{{ inventory_hostname }}"
@@ -76,6 +83,8 @@
     mysql_db:
       name: test
       state: absent
-    no_log: true
+    no_log: false
 
   when:  (wordpress_sites.items() | count) > (sites_using_remote_db | count)
+  tags:
+    - mariadb

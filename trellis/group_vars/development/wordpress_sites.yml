@@ -3,15 +3,15 @@
 # Define accompanying passwords/secrets in group_vars/development/vault.yml
 
 wordpress_sites:
-  radicle.yumistudio.pl:
+  radicle.local.host:
     site_hosts:
-      - canonical: radicle.yumistudio.test
+      - canonical: radicle.local.test
         redirects:
-          - www.radicle.yumistudio.test
+          - www.radicle.local.test
     local_path: ..
     public_path: public
     upload_path: content/uploads
-    admin_email: admin@radicle.yumistudio.test
+    admin_email: admin@radicle.local.test
     multisite:
       enabled: false
     ssl:

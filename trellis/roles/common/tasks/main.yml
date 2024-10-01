@@ -188,12 +188,12 @@
       fail:
         msg: "External IP resolution failed. Check that your DNS servers are working. Try to disable DNSCrypt if you are using it."
 
-- name: Restrict journal log size
-  lineinfile:
-    backup: yes
-    dest: /etc/systemd/journald.conf
-    insertafter: "^[Journal]"
-    line: "SystemMaxUse={{ max_journal_size }}"
-    regexp: "^#?(SystemMaxUse=.*?)$"
-    state: present
-  notify: restart journald
+# - name: Restrict journal log size
+#   lineinfile:
+#     backup: yes
+#     dest: /etc/systemd/journald.conf
+#     insertafter: "^[Journal]"
+#     line: "SystemMaxUse={{ max_journal_size }}"
+#     regexp: "^#?(SystemMaxUse=.*?)$"
+#     state: present
+#   notify: restart journald

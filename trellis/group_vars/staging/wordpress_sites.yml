@@ -3,15 +3,15 @@
 # Define accompanying passwords/secrets in group_vars/staging/vault.yml
 
 wordpress_sites:
-  radicle.yumistudio.pl:
+  radicle.local.host:
     site_hosts:
-      - canonical: staging.radicle.yumistudio.pl
+      - canonical: staging.radicle.local.host
         # redirects:
         #   - otherdomain.com
     local_path: ..
     public_path: public
     upload_path: content/uploads
-    repo: git@github.com:example/radicle.yumistudio.pl.git # replace with your Git repo URL
+    repo: git@github.com:example/radicle.local.host.git # replace with your Git repo URL
     branch: master
     multisite:
       enabled: false

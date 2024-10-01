@@ -36,11 +36,12 @@
     label: "{{ item.path | basename }}"
   notify: reload php-fpm
 
-- name: Start php fpm service
+- name: "Start php{{ php_version }}-fpm service"
   service:
     name: "php{{ php_version }}-fpm"
     state: started
     enabled: true
+    use: service
 
 - name: Copy PHP-FPM php.ini file
   template:

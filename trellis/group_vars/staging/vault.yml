@@ -8,9 +8,9 @@ vault_users:
     salt: "generateme"
 
 # Variables to accompany `group_vars/staging/wordpress_sites.yml`
-# Note: the site name (`radicle.yumistudio.pl`) must match up with the site name in the above file.
+# Note: the site name (`radicle.local.host`) must match up with the site name in the above file.
 vault_wordpress_sites:
-  radicle.yumistudio.pl:
+  radicle.local.host:
     env:
       db_password: example_dbpassword
       # Generate your keys here: https://roots.io/salts.html

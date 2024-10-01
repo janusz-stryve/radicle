@@ -7,7 +7,7 @@
   loop: "{{ sshd_packages | dict2items }}"
   loop_control:
     label: "{{ item.key }}"
-  notify: restart ssh
+  #notify: restart ssh
 
 - name: Create the /run/sshd directory
   file:
@@ -20,7 +20,7 @@
     dest: /etc/ssh/sshd_config
     mode: '0600'
     validate: '/usr/sbin/sshd -T -f %s'
-  notify: restart ssh
+  #notify: restart ssh
 
 - name: Create a secure ssh_config
   template:
