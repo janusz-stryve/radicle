@@ -50,6 +50,7 @@
     },
     "require": {
         "php": ">=8.2",
+        "aaemnnosttv/wp-cli-login-server": "^1.5",
         "blade-ui-kit/blade-heroicons": "^2.2",
         "blade-ui-kit/blade-icons": "^1.5",
         "composer/installers": "^2.2",
@@ -67,6 +68,7 @@
         "roots/wp-password-bcrypt": "1.1.0",
         "roots/wp-stage-switcher": "^2.2",
         "vlucas/phpdotenv": "^5.5",
+        "wp-cli/wp-cli-bundle": "*",
         "wpackagist-plugin/safe-svg": "^2.1"
     },
     "require-dev": {
