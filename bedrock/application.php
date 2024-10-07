@@ -127,7 +127,7 @@ Config::define('WP_DEFAULT_THEME', 'radicle');
 Config::define('ENVIRONMENTS', [
     'development' => 'http://dev.radicle.local.host',
     'staging'     => 'http://staging.radicle.local.host',
-    'production'  => 'http://radicle.local.host'
+    'production'  => 'http://radicle-deploy.local.host'
 ]);
 
 /**
