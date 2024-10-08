@@ -5,15 +5,15 @@ import type { Bud } from "@roots/bud";
  */
 export default async (bud: Bud) => {
   bud
-    // .proxy(`http://spinner.local.host`)
+    // .proxy(`http://radicle.local.host`)
     // .serve(`http://localhost:4000`)
     
-    .proxy(`http://radicle.yumistudio.pl`)
-    // .setProxyUrl('http://spinner.local.host')
-    .serve(`http://localhost:4000`)
+    // .proxy(`http://radicle.yumistudio.pl`)
+    // .setProxyUrl('http://radicle.local.host')
+    // .serve(`http://localhost:4000`)
 
-    // .setPublicUrl('http://localhost:3000')
-    // .setProxyUrl('http://appserver_nginx')
+    .setPublicUrl('http://localhost:3000')
+    .setProxyUrl('http://appserver_nginx')
     
     .watch([
       bud.path(`resources/views`),

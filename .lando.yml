@@ -7,7 +7,7 @@ excludes:
   - vendor
   - node_modules
 config:
-  php: "8.2"
+  php: "8.3"
   via: nginx
   database: mariadb
   cache: redis
@@ -98,5 +98,5 @@ proxy:
   pma:
     - pma.spinner.local.host
   build:
-    - theme.spinner.local.host:3000
-    - radicle.spinner.local.host:4000
+    - dev.spinner.local.host:3000
+    # - spinner.spinner.local.host:4000
