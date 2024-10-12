@@ -1,9 +1,16 @@
 {
     "name": "roots/bedrock",
-    "type": "project",
-    "license": "MIT",
     "description": "WordPress boilerplate with Composer, easier configuration, and an improved folder structure",
-    "homepage": "https://roots.io/bedrock/",
+    "license": "MIT",
+    "type": "project",
+    "keywords": [
+        "bedrock",
+        "composer",
+        "roots",
+        "wordpress",
+        "wp",
+        "wp-config"
+    ],
     "authors": [
         {
             "name": "Scott Walkinshaw",
@@ -16,37 +23,10 @@
             "homepage": "https://github.com/retlehs"
         }
     ],
-    "keywords": [
-        "bedrock",
-        "composer",
-        "roots",
-        "wordpress",
-        "wp",
-        "wp-config"
-    ],
+    "homepage": "https://roots.io/bedrock/",
     "support": {
         "issues": "https://github.com/roots/bedrock/issues",
         "forum": "https://discourse.roots.io/category/bedrock"
-    },
-    "repositories": [
-        {
-            "type": "composer",
-            "url": "https://wpackagist.org",
-            "only": [
-                "wpackagist-plugin/*",
-                "wpackagist-theme/*"
-            ]
-        }
-    ],
-    "autoload": {
-        "psr-4": {
-            "App\\": "app/",
-            "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
-        },
-        "files": [
-            "app/helpers.php"
-        ]
     },
     "require": {
         "php": ">=8.2",
@@ -72,28 +52,57 @@
         "wpackagist-plugin/safe-svg": "^2.1"
     },
     "require-dev": {
+        "ergebnis/composer-normalize": "^2.44",
+        "humanmade/psalm-plugin-wordpress": "^3.1",
         "johnbillion/query-monitor": "^3.12",
         "laravel/pint": "^1.4",
         "pestphp/pest": "^2.0",
+        "php-parallel-lint/php-parallel-lint": "^1.4",
         "phpcompatibility/php-compatibility": "^9.3",
+        "phpro/grumphp": "^2.8",
+        "phpspec/phpspec": "^7.5",
         "roave/security-advisories": "dev-latest",
-        "spatie/laravel-ignition": "^2.4"
+        "spatie/laravel-ignition": "^2.4",
+        "squizlabs/php_codesniffer": "^3.10",
+        "vimeo/psalm": "^6.0@dev"
     },
-    "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "allow-plugins": {
-            "composer/installers": true,
-            "roots/wordpress-core-installer": true,
-            "pestphp/pest-plugin": true
-        },
-        "sort-packages": true,
-        "platform": {
-            "php": "8.2.18"
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://wpackagist.org",
+            "only": [
+                "wpackagist-plugin/*",
+                "wpackagist-theme/*"
+            ]
         }
-    },
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
+        },
+        "files": [
+            "app/helpers.php"
+        ]
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true,
+            "ergebnis/composer-normalize": true,
+            "pestphp/pest-plugin": true,
+            "phpro/grumphp": true,
+            "roots/wordpress-core-installer": true
+        },
+        "optimize-autoloader": true,
+        "platform": {
+            "php": "8.2.18"
+        },
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
     "extra": {
         "acorn": {
             "providers": [
@@ -117,11 +126,11 @@
         "wordpress-install-dir": "public/wp"
     },
     "scripts": {
-        "lint": "pint --test",
-        "lint:fix": "pint",
-        "test": "pest",
         "post-autoload-dump": [
             "Roots\\Acorn\\ComposerScripts::postAutoloadDump"
-        ]
+        ],
+        "lint": "pint --test",
+        "lint:fix": "pint",
+        "test": "pest"
     }
 }
