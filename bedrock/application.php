@@ -125,9 +125,9 @@ Config::define('WP_DEFAULT_THEME', 'radicle');
 
 // Configure stage switcher
 Config::define('ENVIRONMENTS', [
-    'development' => 'http://example.dev',
-    'staging'     => 'http://staging.example.com',
-    'production'  => 'http://radicle.yumistudio.pl'
+    'development' => 'http://dev.radicle.local.host',
+    'staging'     => 'http://staging.radicle.local.host',
+    'production'  => 'http://radicle-deploy.local.host'
 ]);
 
 /**
